@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sk-pri: #ff3366;
+  --sk-acc: #00f0ff;
+  --sk-gold: #ffe600;
+  --sk-ink: #ffffff;
+  --sk-card: #0e0e1c;
+  --sk-bg: #080811;
+}
+
+/* Custom Anime Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080811;
+  border-left: 1px solid #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff3366;
+  border: 1px solid #000;
+  box-shadow: inset 1px 1px 0px #ffe600;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+
+/* Selection */
+::selection {
+  background: #ff3366;
+  color: #ffffff;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--sk-bg);
+  color: var(--sk-ink);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Manga Panel Borders */
+.manga-panel {
+  border: 2px solid #000000;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.9);
+}
+
+.manga-panel-crimson {
+  border: 2px solid #000000;
+  box-shadow: 6px 6px 0px #ff3366;
+}
+
+.manga-panel-cyan {
+  border: 2px solid #000000;
+  box-shadow: 6px 6px 0px #00f0ff;
+}
+
+/* Zero-Jitter Accordion Grid Expansion for Project Status Sheet */
+.accordion-grid {
+  display: grid;
+  transition: grid-template-rows 350ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease-out;
+}
+
+.accordion-grid.collapsed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.accordion-grid.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.accordion-content {
+  overflow: hidden;
+  min-height: 0;
+}
+
